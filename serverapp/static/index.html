@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<!-- https://www.smashingmagazine.com/2016/08/a-beginners-guide-to-progressive-web-apps/ -->
+	
+	<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboard scanner</title>
+    <link async rel="stylesheet" href="/static/app.css">
+		<link rel="manifest" href="/static/manifest.json">
+    <script src="/static/app.js"></script>
+    <script>require('initialize');</script>
+
+		<style>
+			#roomName {
+					text-transform: capitalize;
+			}
+
+			.uploadImage {
+          margin-left:auto;
+					margin-right:auto;
+					max-width: 400px;
+					width: 400px;
+			}
+
+			
+		</style>
+		
+	</head>
+	
+
+	<body>
+		<div id=mainArea>
+			<form>
+				<div class=uploadImage>
+				<a href="#" onclick="document.getElementById('cameraInput').click(); return false;">
+					<img class=uploadImage src="/static/upload.png">
+				</a>
+        <center><div id=status></div></center>
+				</div>
+
+				<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" onchange="uploadImage()" style="visibility: hidden;">
+			</form>
+			<center><h1><div id=roomName></div></h1></center>
+
+		</div>
+	</body>
+
+</html>
